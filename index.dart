@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 void main() {
   validateExercise1(); // Classes & Inheritance
@@ -14,7 +15,9 @@ class Animal {
 
   Animal(this.name);
 
-  void speak() {}
+  void speak() {
+    print("${name} makes a noise");
+  }
 }
 
 // Override in subclass 'Dog' the method 'speak()' so that it prints "<name> barks".
@@ -22,14 +25,18 @@ class Dog extends Animal {
   Dog(String name) : super(name);
 
   @override
-  void speak() {}
+  void speak() {
+    print("${name} barks");
+  }
 }
 
 // Exercise 2: Mixins
 
 // Complete in mixin 'Flyable' the method 'fly()' so that it prints "Flying".
 mixin Flyable {
-  void fly() {}
+  void fly() {
+    print('Flying');
+  }
 }
 
 class Bird extends Animal with Flyable {
@@ -48,7 +55,7 @@ class Circle extends Shape {
 
   @override
   double area() {
-    return 0;
+    return (radius * radius) * pi;
   }
 }
 
@@ -61,7 +68,7 @@ class Rectangle extends Shape {
 
   @override
   double area() {
-    return 0;
+    return width * height;
   }
 }
 
